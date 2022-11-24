@@ -5,15 +5,15 @@ import PackageDescription
 #warning("move binary artifact to private hosting")
 #warning("core-ios-spm is public due to a bug is SPM/Xcode that prevents authentication")
 let package = Package(
-    name: "darwell-xpcore",
+    name: "ios-exereciserepcounter",
     platforms: [
         .iOS(.v14)
     ],
     products: [
         .library(
-            name: "DarwellXPCore",
+            name: "ExerciseRepCounter",
             targets: [
-                "DarwellXpCore", "DarwellCore"
+                "CMExerciseRepCounter"
             ]
         ),
     ],
@@ -21,18 +21,10 @@ let package = Package(
 		.package(url: "git@github.com:ivalx1s/swift-tensorflowlite-spm.git", from: "2.7.0"),
 	],
     targets: [
-		.target(
-			name: "DarwellXpCore",
-			dependencies: [
-				"DarwellCore",
-				.product(name: "TensorFlowLite", package: "swift-tensorflowlite-spm")
-			],
-			path: "Sources"
-		),
        .binaryTarget(
-            name: "DarwellCore",
-            url: "https://github.com/darwell-inc/monolith-ios-spm/releases/download/1.3.2/DarwellCore.xcframework.zip",
-            checksum: "e02b20d2cc74690396dfbbd688b747ef00d336d6c668da0da192aa7733954f25"
+            name: "CMExerciseRepCounter",
+            url: "https://github.com/darwell-inc/ios-exereciserepcounter-spm/releases/download/1.0.0/CMExerciseRepCounter.xcframework.zip",
+            checksum: "ea0bd8bbd9d6c51569899a688f733e8db0692540c332a941e9ab2567ca0379c5"
         )
     ]
 )
